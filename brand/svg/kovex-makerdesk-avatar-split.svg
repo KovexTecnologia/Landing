@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Kovex e MakerDesk">
+  <title>Kovex e MakerDesk</title>
+  <defs>
+    <linearGradient id="kbg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1024" y2="1024"><stop offset="0" stop-color="#111E33"/><stop offset="1" stop-color="#080F1A"/></linearGradient>
+    <linearGradient id="mbg" gradientUnits="userSpaceOnUse" x1="512" y1="0" x2="1024" y2="1024"><stop offset="0" stop-color="#4a8dff"/><stop offset="1" stop-color="#2445d6"/></linearGradient>
+    <linearGradient id="cg" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="80" y2="130"><stop offset="0" stop-color="#3E70E4"/><stop offset="1" stop-color="#2247D2"/></linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#kbg)"/>
+  <rect x="512" width="512" height="1024" fill="url(#mbg)"/>
+  <g transform="translate(155.93 327.00) scale(2.84615)">
+    <path fill="#F8FAFC" d="M0 0 H35 V27 L6.5 65 L35 103 V130 H0 Z"/>
+    <path fill="url(#cg)" d="M62.75 0 H104.75 L56 65 L104.75 130 H62.75 L14 65 Z"/>
+  </g>
+  <g transform="translate(530.49 302.49) scale(0.81840)"><path fill-rule="evenodd" d="M253 17.73A6 6 0 0 1 259 17.73L460.85 134.27A6 6 0 0 1 463.85 139.46L463.85 372.54A6 6 0 0 1 460.85 377.73L259 494.27A6 6 0 0 1 253 494.27L51.15 377.73A6 6 0 0 1 48.15 372.54L48.15 139.46A6 6 0 0 1 51.15 134.27ZM253 70.63A6 6 0 0 1 259 70.63L415.04 160.72A6 6 0 0 1 418.04 165.91L418.04 346.09A6 6 0 0 1 415.04 351.28L259 441.37A6 6 0 0 1 253 441.37L96.96 351.28A6 6 0 0 1 93.96 346.09L93.96 165.91A6 6 0 0 1 96.96 160.72Z" fill="#ffffff"/>
+<path d="M356.22 360.28A6 6 0 0 1 347.22 355.08L347.22 260.92A6 6 0 0 0 336.58 257.12L260.64 349.89A6 6 0 0 1 251.36 349.89L175.42 257.12A6 6 0 0 0 164.78 260.92L164.78 355.08A6 6 0 0 1 155.78 360.28L122.46 341.05A6 6 0 0 1 119.46 335.85L119.46 180.53A6 6 0 0 1 128.02 175.1L171.1 195.38A6 6 0 0 1 173.19 197L251.36 292.51A6 6 0 0 0 260.64 292.51L338.81 197A6 6 0 0 1 340.9 195.38L383.98 175.1A6 6 0 0 1 392.54 180.53L392.54 335.85A6 6 0 0 1 389.54 341.05Z" fill="#ffffff"/></g>
+</svg>
