@@ -31,8 +31,17 @@ export type ConteudoServico = {
     nota: string
     lista?: readonly { nome: string; texto: string }[]
   }
-  /** o MakerDesk como prova do serviço, com a tela do app, a do painel ou a do site */
-  prova: { tela: 'app' | 'painel' | 'site'; titulo: string; texto: readonly string[]; nota: string }
+  /**
+   * A prova do serviço: o MakerDesk (tela do app, do painel ou do site) ou, no atendente de WhatsApp,
+   * uma conversa da demonstração. `conversa` só é lida quando `tela` é 'conversa'.
+   */
+  prova: {
+    tela: 'app' | 'painel' | 'site' | 'conversa'
+    titulo: string
+    texto: readonly string[]
+    nota: string
+    conversa?: readonly { de: 'cliente' | 'atendente'; texto: string; botoes?: readonly string[] }[]
+  }
   /** `destaque` é uma linha de preço em evidência, logo abaixo do título */
   preco: { titulo: string; destaque?: string; texto: string; fatores: readonly string[]; fecho: string }
   condicoes: readonly { nome: string; texto: string }[]
@@ -144,124 +153,6 @@ export const APLICATIVOS: ConteudoServico = {
         pergunta: 'E depois que o app estiver nas lojas?',
         resposta:
           'Correções de defeitos estão incluídas por 30 dias. O iPhone e o Android mudam todo ano, e de tempos em tempos as lojas pedem uma atualização do app. Essas atualizações e as novas funções são planejadas e orçadas no mesmo modelo.',
-      },
-      {
-        pergunta: 'Minha ideia fica protegida?',
-        resposta:
-          'Sim. Sempre que você pedir, assinamos um acordo de confidencialidade antes de entrar nos detalhes.',
-      },
-    ],
-  },
-}
-
-/**
- * Decisões de 2026-10-22: termo "sistemas web sob medida"; exemplos de sair da planilha, portal
- * do cliente e painéis (plataforma por assinatura ficou de fora); preço como o de aplicativos.
- */
-export const SISTEMAS: ConteudoServico = {
-  caminho: '/desenvolvimento-de-sistemas',
-  title: 'Desenvolvimento de sistemas web sob medida · Kovex',
-  description:
-    'Sistema web sob medida para organizar pedidos, estoque, agenda e financeiro, com acesso para a equipe e os clientes. Primeira versão em 4 a 6 semanas.',
-  whatsapp:
-    'Olá, Kovex! Vim pela página de sistemas. Tenho uma ideia de sistema e quero entender por onde começar.',
-  trilha: 'Sistemas web',
-  rotulo: 'Desenvolvimento de sistemas web sob medida',
-  frase: 'Um sistema do jeito que o seu negócio funciona.',
-  abertura:
-    'A Kovex desenvolve sistemas sob medida para empreendedores que cansaram da planilha. Você acessa pelo navegador, no computador ou no celular, e a primeira versão começa pelo que mais pesa no seu dia a dia.',
-
-  paraQuem: {
-    titulo: 'Do caderno e da planilha para um lugar só.',
-    exemplos: [
-      'Pedidos, estoque, agenda e financeiro num sistema só.',
-      'Cada pessoa da equipe com o próprio acesso, vendo só o que precisa.',
-      'Uma área para o cliente acompanhar o pedido e baixar documentos sem precisar perguntar.',
-      'Painéis que mostram como o negócio está, sem montar relatório à mão todo mês.',
-    ],
-    texto: [
-      'Sistema pronto resolve o caso comum. Quando o seu negócio tem um jeito próprio de trabalhar, o sob medida segue esse jeito, em vez de você se adaptar a ele.',
-      'Funciona no navegador, sem instalar nada. Se a equipe precisar de um app para celular, ele pode vir junto, ligado ao mesmo sistema.',
-    ],
-  },
-
-  etapas: {
-    titulo: 'Como a gente desenvolve o seu sistema.',
-    texto: 'O mesmo caminho de todo projeto da Kovex: primeiro o essencial, depois camada por camada.',
-    nota: 'Num sistema, "no ar" quer dizer funcionando no seu endereço, com você e a equipe usando de verdade. Se os dados estão numa planilha, eles podem entrar no sistema já na primeira versão.',
-  },
-
-  prova: {
-    tela: 'painel',
-    titulo: 'Um sistema que a gente construiu e opera todo dia.',
-    texto: [
-      'O MakerDesk é o sistema de gestão da Kovex para negócios de impressão 3D. Ele calcula o custo de cada peça, controla os materiais, transforma orçamentos em pedidos e mostra em relatórios como está o negócio.',
-      'Cada pessoa da equipe entra com o próprio login e vê o que o papel dela permite. Funciona no navegador e tem app para celular, ligado ao mesmo sistema.',
-    ],
-    nota: 'A tela é de uma conta de demonstração, com dados fictícios.',
-  },
-
-  preco: {
-    titulo: 'Quanto custa um sistema?',
-    texto:
-      'Depende do que entra na primeira versão. O valor é fechado por escopo: depois da conversa gratuita, você recebe por escrito o que vai ser feito, o prazo e o preço, e o pagamento é dividido pelos marcos de entrega.',
-    fatores: [
-      'Quantas telas e funções a primeira versão tem.',
-      'Quantos tipos de usuário e o que cada um pode ver e fazer.',
-      'Relatórios e painéis.',
-      'Ligação com outros sistemas, como nota fiscal, pagamento ou WhatsApp.',
-      'Trazer os dados que hoje estão nas planilhas.',
-      'Um app para celular junto com o sistema.',
-    ],
-    fecho:
-      'Na conversa, a gente separa o que precisa estar na primeira versão do que pode esperar. Começar pelo essencial é o que faz o primeiro sistema caber no seu momento.',
-  },
-
-  condicoes: [
-    {
-      nome: 'Primeira versão em 4 a 6 semanas.',
-      texto:
-        'Para a maioria dos projetos, é o tempo até o sistema estar no ar, com você e a equipe usando. O prazo exato vem escrito na proposta.',
-    },
-    {
-      nome: 'A hospedagem é sua.',
-      texto:
-        'O sistema roda em contas de hospedagem no seu nome. Quando a hospedagem tem custo, ele é pago direto ao provedor, sem intermediário.',
-    },
-    {
-      nome: 'O código é seu.',
-      texto:
-        'Repositório, domínio e contas ficam no seu nome desde o primeiro dia. Se um dia quiser seguir com outra pessoa, leva tudo.',
-    },
-  ],
-
-  perguntas: {
-    titulo: 'Perguntas sobre sistemas.',
-    itens: [
-      {
-        pergunta: 'Sistema sob medida ou sistema pronto: qual é melhor?',
-        resposta:
-          'Se existe um sistema pronto que resolve o seu caso, ele costuma sair mais barato, e a gente diz isso na conversa. O sob medida vale a pena quando o seu jeito de trabalhar é o que diferencia o negócio, ou quando você já tentou os prontos e acabou voltando para a planilha.',
-      },
-      {
-        pergunta: 'Preciso instalar alguma coisa?',
-        resposta:
-          'Não. O sistema abre no navegador, no computador ou no celular. Se a equipe precisar de um app, ele pode ser construído junto, ligado ao mesmo sistema.',
-      },
-      {
-        pergunta: 'Dá para trazer os dados da minha planilha?',
-        resposta:
-          'Sim. Clientes, produtos, estoque e o histórico que estão nas planilhas podem ser levados para o sistema. Isso entra no escopo da proposta.',
-      },
-      {
-        pergunta: 'O sistema conversa com o que eu já uso?',
-        resposta:
-          'Na maioria dos casos, sim: emissão de nota fiscal, meios de pagamento, WhatsApp e outros sistemas que ofereçam uma forma de integração. A gente confere cada um na conversa, antes da proposta.',
-      },
-      {
-        pergunta: 'E depois que o sistema estiver no ar?',
-        resposta:
-          'Correções de defeitos estão incluídas por 30 dias. Novas funções são planejadas e orçadas no mesmo modelo, quando fizerem sentido para o seu negócio.',
       },
       {
         pergunta: 'Minha ideia fica protegida?',
@@ -416,6 +307,162 @@ export const SITES: ConteudoServico = {
 }
 
 /**
+ * Decisões de 2026-11-10: o atendente de WhatsApp com IA vira um dos principais serviços e entra no
+ * lugar de "Automação e IA" (que ainda não tinha página). Sem preço e sem prazo, que não foram
+ * confirmados. A prova é a demonstração da Clínica Lume (WhatsapBotOficial e WhatsappBot), com dados
+ * fictícios; quando o atendente da própria Kovex estiver no número do site, ele pode virar a prova.
+ */
+export const ATENDENTE: ConteudoServico = {
+  caminho: '/atendente-de-whatsapp-com-ia',
+  title: 'Atendente de WhatsApp com IA para o seu negócio · Kovex',
+  description:
+    'Atendente virtual de WhatsApp com inteligência artificial: responde seus clientes a qualquer hora, com as informações do seu negócio, e passa para a sua equipe.',
+  whatsapp:
+    'Olá, Kovex! Vim pela página do atendente de WhatsApp. Quero um atendente com IA para o meu negócio.',
+  trilha: 'Atendente de WhatsApp com IA',
+  rotulo: 'Atendente de WhatsApp com inteligência artificial',
+  frase: 'Seu WhatsApp respondendo na hora, a qualquer hora.',
+  abertura:
+    'A Kovex cria atendentes virtuais para WhatsApp que respondem seus clientes com as informações do seu negócio e chamam a sua equipe quando o assunto pede uma pessoa.',
+  destaques: ['Responde a qualquer hora', 'Informações numa planilha sua', 'Passa para a sua equipe'],
+
+  paraQuem: {
+    titulo: 'Para quem responde as mesmas perguntas o dia todo.',
+    exemplos: [
+      'Preço, horário, endereço e formas de pagamento respondidos na hora, mesmo de madrugada.',
+      'O cliente pede para marcar ou fechar, e a sua equipe recebe o aviso para continuar.',
+      'Mudou um preço? Você muda na planilha, e o atendente já responde com o novo.',
+      'Reclamação, urgência ou pergunta sem resposta vão direto para uma pessoa.',
+    ],
+    texto: [
+      'O atendente responde só com o que está nas informações do seu negócio: não inventa preço nem promete o que você não oferece. Quando não sabe, ou quando o cliente quer agendar, fechar ou falar com alguém, ele avisa a sua equipe.',
+      'A equipe responde pelo WhatsApp, e o cliente recebe pelo número da empresa. Quando a conversa termina, ela volta para o atendente virtual.',
+    ],
+  },
+
+  etapas: {
+    titulo: 'Como a gente cria o seu atendente.',
+    texto: 'O mesmo caminho de todo projeto da Kovex: primeiro o essencial, depois o que vier.',
+    nota: 'Pela API oficial do WhatsApp, o número passa por um cadastro na Meta, com a verificação da sua empresa. A gente acompanha cada passo, e o prazo da Meta já entra na proposta.',
+    lista: [
+      {
+        nome: 'Conversa gratuita',
+        texto:
+          'Você conta como é o atendimento hoje: o que os clientes mais perguntam e quando precisa de uma pessoa.',
+      },
+      {
+        nome: 'Escopo e proposta',
+        texto: 'O que o atendente responde, quando chama a equipe, o prazo e o valor fechado, por escrito.',
+      },
+      {
+        nome: 'Atendente no ar',
+        texto:
+          'As informações do seu negócio numa planilha que você mesmo edita, e o atendente respondendo no seu número. Você testa antes de abrir para os clientes.',
+      },
+      {
+        nome: 'Evolução',
+        texto:
+          'Com conversas de verdade, fica claro o que ajustar: novas respostas, outros motivos para chamar a equipe, ligação com agenda ou sistema.',
+      },
+    ],
+  },
+
+  prova: {
+    tela: 'conversa',
+    titulo: 'Um atendente que a gente construiu.',
+    texto: [
+      'A Kovex montou um atendente completo para uma clínica odontológica de demonstração: ele responde pela planilha da clínica, mostra botões com as opções mais pedidas e passa para a equipe quando o cliente quer marcar.',
+      'A mesma demonstração existe pela API oficial do WhatsApp, da Meta, e por uma conexão com o WhatsApp do próprio número, para comparar os dois caminhos.',
+    ],
+    nota: 'Conversa de demonstração, com uma clínica e dados fictícios.',
+    conversa: [
+      { de: 'cliente', texto: 'Oi, quanto custa a limpeza?' },
+      {
+        de: 'atendente',
+        texto:
+          'Oi! Sou a assistente virtual da Clínica Lume. A limpeza custa R$ 180 e leva cerca de 40 minutos. Posso ajudar com mais alguma dúvida?',
+        botoes: ['Preços', 'Convênios', 'Falar com a equipe'],
+      },
+      { de: 'cliente', texto: 'Quero marcar para sexta de manhã.' },
+      {
+        de: 'atendente',
+        texto: 'Combinado! Vou passar sua conversa para a equipe da clínica, que confirma o horário por aqui.',
+      },
+    ],
+  },
+
+  preco: {
+    titulo: 'Quanto custa um atendente de WhatsApp?',
+    texto:
+      'Depende do que o atendente precisa fazer. O valor é fechado por escopo: depois da conversa gratuita, você recebe por escrito o que vai ser feito, o prazo e o preço, e o pagamento é dividido pelos marcos de entrega.',
+    fatores: [
+      'Quantas informações e perguntas o atendente precisa cobrir.',
+      'API oficial do WhatsApp ou conexão com o WhatsApp do seu número.',
+      'Quando e como a equipe é chamada.',
+      'Mais de uma pessoa da equipe atendendo.',
+      'Ligação com agenda, sistema ou planilha que você já usa.',
+      'Áudio, imagem e outros formatos além de texto.',
+    ],
+    fecho:
+      'Na conversa, a gente separa o que precisa estar no ar agora do que pode esperar. Um atendente que responde bem as perguntas mais comuns já tira boa parte do trabalho.',
+  },
+
+  condicoes: [
+    {
+      nome: 'Pelo canal oficial.',
+      texto:
+        'Pela API oficial, o atendente usa o canal que a Meta oferece para empresas, sem o risco de bloqueio por automação. A Meta cobra à parte as mensagens acima de uma cota gratuita por mês, pagas direto a ela.',
+    },
+    {
+      nome: 'As informações são suas.',
+      texto:
+        'Preços, horários e respostas ficam numa planilha na sua conta. Você muda quando quiser, sem depender da gente.',
+    },
+    {
+      nome: 'O código é seu.',
+      texto:
+        'Repositório, domínio e contas ficam no seu nome desde o primeiro dia. Se um dia quiser seguir com outra pessoa, leva tudo.',
+    },
+  ],
+
+  perguntas: {
+    titulo: 'Perguntas sobre o atendente de WhatsApp.',
+    itens: [
+      {
+        pergunta: 'O atendente funciona no meu número de WhatsApp?',
+        resposta:
+          'Funciona. Há dois caminhos: a API oficial do WhatsApp, da Meta, que é o canal previsto para empresas; ou uma conexão com o WhatsApp do seu número, mais simples de começar. Na conversa, a gente diz qual faz mais sentido para você.',
+      },
+      {
+        pergunta: 'Ele pode responder algo errado?',
+        resposta:
+          'Ele responde só com o que está nas informações do seu negócio. Quando a pergunta não tem resposta ali, ele não inventa: passa para a sua equipe.',
+      },
+      {
+        pergunta: 'Como a minha equipe assume a conversa?',
+        resposta:
+          'A equipe recebe um aviso no WhatsApp com o nome do cliente e a última mensagem, e responde por ali. O cliente recebe pelo número da empresa. Quando termina, um toque devolve a conversa ao atendente virtual.',
+      },
+      {
+        pergunta: 'Preciso de algum programa novo?',
+        resposta:
+          'Não. As informações ficam numa planilha que você já sabe usar, e a equipe atende pelo próprio WhatsApp.',
+      },
+      {
+        pergunta: 'E depois que o atendente estiver no ar?',
+        resposta:
+          'Correções de defeitos estão incluídas por 30 dias. Novas respostas você mesmo inclui na planilha; mudanças no jeito de atender são orçadas no mesmo modelo.',
+      },
+      {
+        pergunta: 'Minha ideia fica protegida?',
+        resposta:
+          'Sim. Sempre que você pedir, assinamos um acordo de confidencialidade antes de entrar nos detalhes.',
+      },
+    ],
+  },
+}
+
+/**
  * A imagem de compartilhamento da home. Uma página que define o próprio `openGraph`
  * perde a imagem que vem do `app/opengraph-image.png`, então ela é declarada aqui,
  * com o texto de `app/opengraph-image.alt.txt`.
@@ -423,7 +470,7 @@ export const SITES: ConteudoServico = {
 const IMAGEM = {
   width: 1200,
   height: 630,
-  alt: 'Sua ideia vira produto, camada por camada. Kovex Tecnologia: sistemas, apps e sites.',
+  alt: 'Sua ideia vira produto, camada por camada. Kovex Tecnologia: atendentes com IA, sites e apps.',
 }
 
 /** Title, description, canonical e compartilhamento da página. */

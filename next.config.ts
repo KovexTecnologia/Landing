@@ -54,6 +54,8 @@ const nextConfig: NextConfig = {
       },
       // endereço da política no primeiro site
       { source: '/politica-de-privacidade', destination: '/privacidade', permanent: true },
+      // a página de sistemas saiu em 2026-11-10 (foco em serviços rápidos); já estava indexada
+      { source: '/desenvolvimento-de-sistemas', destination: '/', permanent: true },
     ]
   },
 }

@@ -30,7 +30,7 @@ export function Rodape({ base = '', whatsapp = WHATSAPP_URL }: { base?: '' | '/'
             unoptimized
             className="h-10 w-auto"
           />
-          <p className="mt-6 max-w-[24ch] text-apoio">Sistemas, apps e sites para quem tem uma ideia.</p>
+          <p className="mt-6 max-w-[24ch] text-apoio">Atendentes com IA, sites e apps para quem tem uma ideia.</p>
         </div>
 
         <nav aria-label="Serviços" className="lg:col-span-3">

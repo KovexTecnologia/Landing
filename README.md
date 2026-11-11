@@ -21,18 +21,25 @@ pnpm typecheck
 |---|---|
 | Textos da página (serviços, etapas, compromissos, perguntas, exemplos) | `lib/conteudo.ts` |
 | Páginas de serviço: texto, title, description e mensagem do WhatsApp | `lib/servicos.ts` |
-| Layout das páginas de serviço (um modelo só para todas) | `components/PaginaServico.tsx` |
+| Layout das páginas de serviço (um modelo só para todas; a prova é uma captura do MakerDesk ou, com `tela: 'conversa'`, uma conversa em HTML) | `components/PaginaServico.tsx` |
 | Dados da empresa, WhatsApp, e-mail, prazo de resposta, links das lojas | `lib/site.ts` |
 | Cores, tipografia, escala de espaço e o vidro em 3D | `app/globals.css` |
 | Uma seção por arquivo | `components/` |
 | Política de privacidade | `app/privacidade/page.tsx` |
-| Imagem de compartilhamento | `docs/og/og.html` (gera `app/opengraph-image.png` e `app/twitter-image.png`) |
+| Imagem de compartilhamento | `docs/og/og.html` (gera `app/opengraph-image.png` e `app/twitter-image.png`; em 2026-11-10 saiu do Chrome sem janela: `chrome --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=5000 --screenshot=og.png file:///.../docs/og/og.html`) |
 | Capturas do MakerDesk (painel, app e site) | `public/products/makerdesk-relatorios.png`, `makerdesk-app.png` e `makerdesk-landing.png` |
 
+Foco, desde 2026-11-10: **serviços que ficam prontos rápido.** Os serviços, nesta ordem, são atendente
+de WhatsApp com IA, sites e landing pages, automação e IA (ainda sem página) e apps para celular. Sistemas
+web saiu do site: `/desenvolvimento-de-sistemas` redireciona para a home com 308 (`next.config.ts`),
+porque já estava indexada.
+
 Regra da copy, herdada da versão anterior: **nada de número, cliente ou prazo inventado.** Os únicos
-números do site são compromissos confirmados pela Kovex: primeira versão em 4 a 6 semanas, 30 dias de
-correções e resposta em até 24 horas; na página de sites, landing page em até 1 semana, site da empresa
-em até 2 e landing page de uma página, com o texto do cliente, a partir de R$ 200. A nota 100 do
+números do site são compromissos confirmados pela Kovex: primeira versão de um app em 4 a 6 semanas, 30
+dias de correções e resposta em até 24 horas; landing page em até 1 semana, site da empresa em até 2 e
+landing page de uma página, com o texto do cliente, a partir de R$ 200. A página do atendente de WhatsApp
+não tem preço nem prazo, e a conversa dela é da demonstração da Clínica Lume (`WhatsapBotOficial`), com
+dados fictícios. A nota 100 do
 PageSpeed citada na página de sites é uma medição real, com data. Os números que aparecem dentro das
 capturas do MakerDesk são de uma oficina de demonstração, não afirmação da Kovex.
 

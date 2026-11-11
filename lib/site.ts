@@ -4,9 +4,9 @@ export const SITE_NAME = 'Kovex Tecnologia'
  * Title e description com as palavras que as pessoas buscam (decisão de 2026-10-22).
  * Até ~60 e ~155 caracteres, para o Google não cortar.
  */
-export const SITE_TITLE = 'Desenvolvimento de sistemas, apps e sites sob medida · Kovex'
+export const SITE_TITLE = 'Atendente de WhatsApp com IA, sites e apps sob medida · Kovex'
 export const SITE_DESCRIPTION =
-  'Sistemas web, aplicativos e sites sob medida para quem tem uma ideia. Primeira versão no ar em 4 a 6 semanas, valor fechado e código no seu nome.'
+  'Atendente de WhatsApp com IA, sites, landing pages, automações e apps sob medida. Landing page em até 1 semana, valor fechado e código no seu nome.'
 
 /**
  * Dados formais: aparecem no rodapé, na privacidade e no JSON-LD. Endereço e data

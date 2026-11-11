@@ -149,7 +149,7 @@ export function PaginaServico({ pagina }: { pagina: ConteudoServico }) {
 
         <section className="clara degraus overflow-hidden bg-branco py-secao text-navy">
           <div className="moldura grid items-center gap-16 lg:grid-cols-12 lg:gap-6">
-            <div className={pagina.prova.tela === 'app' ? 'lg:col-span-6' : 'lg:col-span-5'}>
+            <div className={pagina.prova.tela === 'app' || pagina.prova.tela === 'conversa' ? 'lg:col-span-6' : 'lg:col-span-5'}>
               <p className="rotulo flex items-center gap-3 text-azul-escuro">
                 <span className="chevron" aria-hidden="true" />
                 Feito pela Kovex
@@ -164,14 +164,55 @@ export function PaginaServico({ pagina }: { pagina: ConteudoServico }) {
                 </p>
               ))}
               <p className="mt-6 max-w-texto text-rotulo text-apoio-claro">{pagina.prova.nota}</p>
-              <p className="mt-8">
-                <a href={MAKERDESK_URL} target="_blank" rel="noopener" className="link inline-flex items-center gap-3">
-                  <Image src="/products/makerdesk.svg" alt="" width={32} height={32} unoptimized className="size-8" />
-                  Conhecer o MakerDesk<span className="sr-only"> (abre em nova aba)</span>
-                </a>
-              </p>
+              {pagina.prova.tela !== 'conversa' && (
+                <p className="mt-8">
+                  <a href={MAKERDESK_URL} target="_blank" rel="noopener" className="link inline-flex items-center gap-3">
+                    <Image src="/products/makerdesk.svg" alt="" width={32} height={32} unoptimized className="size-8" />
+                    Conhecer o MakerDesk<span className="sr-only"> (abre em nova aba)</span>
+                  </a>
+                </p>
+              )}
             </div>
-            {pagina.prova.tela === 'app' ? (
+            {pagina.prova.tela === 'conversa' ? (
+              <div className="lg:col-span-5 lg:col-start-8">
+                {/* a conversa em HTML, não em imagem: o texto fica legível para leitor de tela e para busca */}
+                <div className="celular mx-auto w-[min(80vw,20rem)]">
+                  <ol aria-label="Conversa de demonstração no WhatsApp" className="grid gap-3 bg-superficie p-4 text-rotulo">
+                    {pagina.prova.conversa?.map((mensagem) => (
+                      <li
+                        key={mensagem.texto}
+                        className={
+                          mensagem.de === 'cliente'
+                            ? 'ml-8 justify-self-end rounded-k bg-azul-escuro px-3 py-2 text-branco'
+                            : 'mr-8 justify-self-start'
+                        }
+                      >
+                        <span className="sr-only">{mensagem.de === 'cliente' ? 'Cliente: ' : 'Atendente virtual: '}</span>
+                        {mensagem.de === 'cliente' ? (
+                          mensagem.texto
+                        ) : (
+                          <>
+                            <span className="block rounded-k bg-navy px-3 py-2 text-branco">{mensagem.texto}</span>
+                            {mensagem.botoes && (
+                              <span className="mt-1 grid gap-1">
+                                {mensagem.botoes.map((botao) => (
+                                  <span
+                                    key={botao}
+                                    className="block rounded-k bg-navy px-3 py-2 text-center font-semibold text-azul-claro"
+                                  >
+                                    {botao}
+                                  </span>
+                                ))}
+                              </span>
+                            )}
+                          </>
+                        )}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+            ) : pagina.prova.tela === 'app' ? (
               <div className="lg:col-span-5 lg:col-start-8">
                 {/* a mesma captura da home: conta demo, no app (Expo Web) em 390×845 a 3x */}
                 <div className="celular mx-auto w-[min(56vw,14rem)]">

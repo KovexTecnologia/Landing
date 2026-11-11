@@ -4,32 +4,32 @@
  */
 
 /** Os três fatos da faixa embaixo da abertura (aprovados em 2026-10-21). */
-export const DESTAQUES = ['Primeira versão em 4 a 6 semanas', 'Valor fechado', 'Código no seu nome'] as const
+export const DESTAQUES = ['Landing page em até 1 semana', 'Valor fechado', 'Código no seu nome'] as const
 
 /**
  * Exemplos de ideias na seção "Para quem". São tipos de projeto, não clientes:
  * sem aspas, sem nomes, para não parecerem depoimentos.
  */
 export const IDEIAS = [
-  'Um sistema para sair do caderno e da planilha.',
+  'Um atendente que responde seus clientes no WhatsApp, a qualquer hora.',
+  'Uma página para apresentar sua ideia e trazer os primeiros contatos.',
   'Um app para seus clientes agendarem ou pedirem sozinhos.',
-  'Uma plataforma para vender seu serviço por assinatura.',
 ] as const
 
 /**
  * `pagina` é o endereço da página do serviço (fase 4 do plano de SEO), ou `null`
  * enquanto ela não existe: com página, o nome vira link na home e entra no rodapé.
  */
+/**
+ * Decisão de 2026-11-10: foco em serviços que ficam prontos rápido. "Sistemas web" saiu (a página
+ * redireciona para a home) e o atendente de WhatsApp com IA entrou como primeiro serviço.
+ */
 export const SERVICOS = [
   {
-    nome: 'Sistemas web',
-    texto: 'O sistema que organiza a operação do seu negócio, do pedido ao financeiro.',
-    pagina: '/desenvolvimento-de-sistemas',
-  },
-  {
-    nome: 'Apps para celular',
-    texto: 'Aplicativo para iPhone e Android, para seus clientes ou para a sua equipe.',
-    pagina: '/desenvolvimento-de-aplicativos',
+    nome: 'Atendente de WhatsApp com IA',
+    texto:
+      'Um atendente virtual que responde seus clientes a qualquer hora, com as informações do seu negócio, e chama a sua equipe quando precisa.',
+    pagina: '/atendente-de-whatsapp-com-ia',
   },
   {
     nome: 'Sites e landing pages',
@@ -41,6 +41,11 @@ export const SERVICOS = [
     texto:
       'Tarefas repetitivas resolvidas por software, com inteligência artificial onde ela ajuda de verdade.',
     pagina: null,
+  },
+  {
+    nome: 'Apps para celular',
+    texto: 'Aplicativo para iPhone e Android, para seus clientes ou para a sua equipe.',
+    pagina: '/desenvolvimento-de-aplicativos',
   },
 ] as const
 
@@ -58,7 +63,7 @@ export const ETAPAS = [
   {
     nome: 'Primeira versão no ar',
     texto:
-      'Em 4 a 6 semanas, para a maioria dos projetos. Você acompanha cada entrega e testa antes de lançar.',
+      'Landing page em até 1 semana, app em 4 a 6, para a maioria dos projetos. Você acompanha cada entrega e testa antes de lançar.',
   },
   {
     nome: 'Evolução',
@@ -102,7 +107,7 @@ export const PERGUNTAS = [
   {
     pergunta: 'Em quanto tempo fica pronto?',
     resposta:
-      'A primeira versão costuma ir ao ar em 4 a 6 semanas. O prazo exato do seu projeto vem escrito na proposta.',
+      'Depende do serviço: landing page em até 1 semana, site da empresa em até 2 e a primeira versão de um app em 4 a 6. O prazo exato do seu projeto vem escrito na proposta.',
   },
   {
     pergunta: 'O código fica comigo?',

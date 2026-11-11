@@ -10,7 +10,7 @@ export function Servicos() {
   return (
     <section id="servicos" className="bg-superficie py-secao">
       <div className="moldura">
-        <h2 className="max-w-[16ch] font-display text-titulo font-bold">Do sistema ao app, num lugar só.</h2>
+        <h2 className="max-w-[16ch] font-display text-titulo font-bold">Do WhatsApp ao app, num lugar só.</h2>
 
         <LuzCursor className="mt-16">
           <ul className="border-b border-fio">
