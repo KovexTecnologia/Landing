@@ -316,7 +316,7 @@ export const ATENDENTE: ConteudoServico = {
   caminho: '/atendente-de-whatsapp-com-ia',
   title: 'Atendente de WhatsApp com IA para o seu negócio · Kovex',
   description:
-    'Atendente virtual de WhatsApp com inteligência artificial: responde seus clientes a qualquer hora, com as informações do seu negócio, e passa para a sua equipe.',
+    'Atendente de WhatsApp com inteligência artificial: responde seus clientes a qualquer hora, com as informações do seu negócio, e passa para a sua equipe.',
   whatsapp:
     'Olá, Kovex! Vim pela página do atendente de WhatsApp. Quero um atendente com IA para o meu negócio.',
   trilha: 'Atendente de WhatsApp com IA',
