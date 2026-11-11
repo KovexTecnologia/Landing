@@ -164,4 +164,6 @@ Hoje existem `/atendente-de-whatsapp-com-ia`, `/criacao-de-sites` e `/desenvolvi
   `/atendente-de-whatsapp-com-ia`, com uma conversa de demonstração como prova; "Sistemas web" saiu (a página
   redireciona para a home com 308, porque já estava indexada); e o title, a description, o H1, o rodapé, a imagem de
   compartilhamento, os destaques da abertura e as respostas sobre prazo foram reescritos em torno do atendente de
-  WhatsApp com IA, sites e apps.
+  WhatsApp com IA, sites e apps. Em 11/11, o title da home passou a ter 50 caracteres (saiu "sob medida") e a description
+  de `/atendente-de-whatsapp-com-ia`, 152, dentro dos limites de 60 e 155; a indexação da home e da página nova foi
+  pedida no Search Console.
