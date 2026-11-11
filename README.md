@@ -142,9 +142,11 @@ Campos opcionais do `ConteudoServico`, para quando a página foge do padrão da 
   de sites usa os dois, porque a faixa e a etapa 3 da home dizem "4 a 6 semanas".
 - `preco.destaque` põe uma linha de preço em evidência abaixo do título da seção.
 - `prova.tela` escolhe a captura do MakerDesk: `app` (o celular), `painel` (Relatórios) ou `site`
-  (a primeira tela de www.makerdesk.com.br).
+  (a primeira tela de www.makerdesk.com.br). Com `conversa`, a prova é uma conversa de WhatsApp desenhada em HTML, a
+  partir de `prova.conversa` (quem fala, o texto e os botões), sem a captura nem o link do MakerDesk.
 
-Hoje existem `/desenvolvimento-de-aplicativos`, `/desenvolvimento-de-sistemas` e `/criacao-de-sites`.
+Hoje existem `/atendente-de-whatsapp-com-ia`, `/criacao-de-sites` e `/desenvolvimento-de-aplicativos`. A
+`/desenvolvimento-de-sistemas` saiu em 10/11/2026 e redireciona para a home com 308 (`next.config.ts`).
 
 ## Histórico
 
@@ -158,3 +160,8 @@ Hoje existem `/desenvolvimento-de-aplicativos`, `/desenvolvimento-de-sistemas` e
   reservados, e o site foi publicado no projeto `kovex-site` da Vercel. Em 22/10/2026 o título e o H1
   da home ganharam as palavras de busca, o domínio entrou no Search Console e no Bing, e foram ao ar as
   páginas de aplicativos, sistemas web e sites, cada uma com a sua mensagem de WhatsApp.
+- **Novembro de 2026:** em 10/11 o foco passou a serviços que ficam prontos rápido. Entrou a página
+  `/atendente-de-whatsapp-com-ia`, com uma conversa de demonstração como prova; "Sistemas web" saiu (a página
+  redireciona para a home com 308, porque já estava indexada); e o title, a description, o H1, o rodapé, a imagem de
+  compartilhamento, os destaques da abertura e as respostas sobre prazo foram reescritos em torno do atendente de
+  WhatsApp com IA, sites e apps.
