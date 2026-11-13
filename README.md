@@ -37,9 +37,12 @@ porque já estava indexada.
 Regra da copy, herdada da versão anterior: **nada de número, cliente ou prazo inventado.** Os únicos
 números do site são compromissos confirmados pela Kovex: primeira versão de um app em 4 a 6 semanas, 30
 dias de correções e resposta em até 24 horas; landing page em até 1 semana, site da empresa em até 2 e
-landing page de uma página, com o texto do cliente, a partir de R$ 200. A página do atendente de WhatsApp
-não tem preço nem prazo, e a conversa dela é da demonstração da Clínica Lume (`WhatsapBotOficial`), com
-dados fictícios. A nota 100 do
+landing page de uma página, com o texto do cliente, a partir de R$ 200; e, desde 13/11/2026, a tabela do
+atendente de WhatsApp (implantação R$ 147; base R$ 59/mês com IA até 2.000 respostas; áudio e foto +R$ 19;
+agendamento +R$ 39; leads e CRM +R$ 29; número extra +R$ 49; excedente R$ 15 por 1.000; mensal sem
+fidelidade), que vem do "Plano de venda" do `WhatsappBot/README.md`: mudou lá, muda aqui. A página do
+atendente continua sem prazo de implantação, e a conversa dela é da demonstração da Clínica Lume
+(`WhatsapBotOficial`), com dados fictícios. A nota 100 do
 PageSpeed citada na página de sites é uma medição real, com data. Os números que aparecem dentro das
 capturas do MakerDesk são de uma oficina de demonstração, não afirmação da Kovex.
 
@@ -140,7 +143,9 @@ Campos opcionais do `ConteudoServico`, para quando a página foge do padrão da 
 
 - `destaques` troca a faixa de fatos da abertura, e `etapas.lista` troca as quatro etapas. A página
   de sites usa os dois, porque a faixa e a etapa 3 da home dizem "4 a 6 semanas".
-- `preco.destaque` põe uma linha de preço em evidência abaixo do título da seção.
+- `preco.destaque` põe uma linha de preço em evidência abaixo do título da seção. `preco.tabela` troca a
+  lista "O que mais pesa no preço" por uma tabela de valores fixos (`<table>` com nome, o que inclui e o
+  valor) mais as notas miúdas; a página do atendente usa, com `fatores: []`.
 - `prova.tela` escolhe a captura do MakerDesk: `app` (o celular), `painel` (Relatórios) ou `site`
   (a primeira tela de www.makerdesk.com.br). Com `conversa`, a prova é uma conversa de WhatsApp desenhada em HTML, a
   partir de `prova.conversa` (quem fala, o texto e os botões), sem a captura nem o link do MakerDesk.
@@ -166,4 +171,7 @@ Hoje existem `/atendente-de-whatsapp-com-ia`, `/criacao-de-sites` e `/desenvolvi
   compartilhamento, os destaques da abertura e as respostas sobre prazo foram reescritos em torno do atendente de
   WhatsApp com IA, sites e apps. Em 11/11, o title da home passou a ter 50 caracteres (saiu "sob medida") e a description
   de `/atendente-de-whatsapp-com-ia`, 152, dentro dos limites de 60 e 155; a indexação da home e da página nova foi
-  pedida no Search Console.
+  pedida no Search Console. Em 13/11, a página do atendente ganhou a tabela de preços do plano de venda
+  (`preco.tabela`), o destaque "A partir de R$ 59 por mês" na abertura e os textos ajustados ao modelo
+  hospedado: saiu "O código é seu" (o código não é entregue) e a equipe passou a atender por um painel,
+  não pelo WhatsApp pessoal; entrou "Sem fidelidade" e a pergunta sobre passar de 2.000 respostas.

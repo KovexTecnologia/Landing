@@ -251,15 +251,51 @@ export function PaginaServico({ pagina }: { pagina: ConteudoServico }) {
               <p className="mt-8 max-w-texto text-abertura text-apoio">{pagina.preco.texto}</p>
             </div>
             <div className="lg:col-span-6 lg:col-start-7">
-              <p className="rotulo text-azul-claro">O que mais pesa no preço</p>
-              <ul className="mt-6 border-b border-fio">
-                {pagina.preco.fatores.map((fator) => (
-                  <li key={fator} className="flex items-baseline gap-4 border-t border-fio py-4">
-                    <span className="chevron text-azul-claro" aria-hidden="true" />
-                    {fator}
-                  </li>
-                ))}
-              </ul>
+              {pagina.preco.tabela ? (
+                <>
+                  {/* tabela de preços de verdade (<table>), com o valor numa coluna só: a lista de fatores não cabe aqui */}
+                  <p className="rotulo text-azul-claro">{pagina.preco.tabela.rotulo}</p>
+                  <table className="mt-6 w-full border-collapse text-left">
+                    <thead className="sr-only">
+                      <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody className="border-b border-fio">
+                      {pagina.preco.tabela.linhas.map((linha) => (
+                        <tr key={linha.nome} className="border-t border-fio align-baseline">
+                          <th scope="row" className="py-4 pr-4 font-normal">
+                            <span className="block font-display text-subtitulo font-bold">{linha.nome}</span>
+                            <span className="mt-1 block max-w-texto text-apoio">{linha.inclui}</span>
+                          </th>
+                          <td className="py-4 text-right whitespace-nowrap font-semibold text-azul-claro">{linha.valor}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <ul className="mt-6 grid max-w-texto gap-3 text-rotulo text-apoio">
+                    {pagina.preco.tabela.notas.map((nota) => (
+                      <li key={nota} className="flex items-baseline gap-3">
+                        <span className="chevron text-azul-claro" aria-hidden="true" />
+                        {nota}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <>
+                  <p className="rotulo text-azul-claro">O que mais pesa no preço</p>
+                  <ul className="mt-6 border-b border-fio">
+                    {pagina.preco.fatores.map((fator) => (
+                      <li key={fator} className="flex items-baseline gap-4 border-t border-fio py-4">
+                        <span className="chevron text-azul-claro" aria-hidden="true" />
+                        {fator}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
               <p className="mt-8 max-w-texto text-apoio">{pagina.preco.fecho}</p>
             </div>
           </div>

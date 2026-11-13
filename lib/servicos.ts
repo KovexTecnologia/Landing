@@ -42,8 +42,19 @@ export type ConteudoServico = {
     nota: string
     conversa?: readonly { de: 'cliente' | 'atendente'; texto: string; botoes?: readonly string[] }[]
   }
-  /** `destaque` é uma linha de preço em evidência, logo abaixo do título */
-  preco: { titulo: string; destaque?: string; texto: string; fatores: readonly string[]; fecho: string }
+  /**
+   * `destaque` é uma linha de preço em evidência, logo abaixo do título. `tabela` troca a lista de
+   * fatores por uma tabela de preços (serviço com valores fixos, como o atendente): cada linha tem o
+   * nome, o valor e o que inclui; `notas` são as regras miúdas (excedente, fidelidade, taxas de terceiros).
+   */
+  preco: {
+    titulo: string
+    destaque?: string
+    texto: string
+    fatores: readonly string[]
+    tabela?: { rotulo: string; linhas: readonly { nome: string; valor: string; inclui: string }[]; notas: readonly string[] }
+    fecho: string
+  }
   condicoes: readonly { nome: string; texto: string }[]
   perguntas: { titulo: string; itens: readonly { pergunta: string; resposta: string }[] }
 }
@@ -308,9 +319,16 @@ export const SITES: ConteudoServico = {
 
 /**
  * Decisões de 2026-11-10: o atendente de WhatsApp com IA vira um dos principais serviços e entra no
- * lugar de "Automação e IA" (que ainda não tinha página). Sem preço e sem prazo, que não foram
- * confirmados. A prova é a demonstração da Clínica Lume (WhatsapBotOficial e WhatsappBot), com dados
- * fictícios; quando o atendente da própria Kovex estiver no número do site, ele pode virar a prova.
+ * lugar de "Automação e IA" (que ainda não tinha página). A prova é a demonstração da Clínica Lume
+ * (WhatsapBotOficial e WhatsappBot), com dados fictícios; quando o atendente da própria Kovex estiver no
+ * número do site, ele pode virar a prova.
+ *
+ * Preços desde 2026-11-13, do "Plano de venda" do WhatsappBot (decididos pelo Paulo em 12 e 13/11):
+ * implantação R$ 147; base R$ 59/mês com IA até 2.000 respostas; áudio e foto +R$ 19; agendamento
+ * +R$ 39; leads e CRM +R$ 29; número extra +R$ 49; excedente R$ 15 por 1.000 respostas; mensal sem
+ * fidelidade, 30 dias de aviso, exportação ao sair. O serviço é hospedado pela Kovex (o código não é
+ * entregue), por isso a condição "O código é seu" não vale aqui, e a equipe atende por um painel, não
+ * pelo WhatsApp pessoal (decisão de 13/11). Continua sem prazo de implantação: a hora ainda não foi medida.
  */
 export const ATENDENTE: ConteudoServico = {
   caminho: '/atendente-de-whatsapp-com-ia',
@@ -324,7 +342,7 @@ export const ATENDENTE: ConteudoServico = {
   frase: 'Seu WhatsApp respondendo na hora, a qualquer hora.',
   abertura:
     'A Kovex cria atendentes virtuais para WhatsApp que respondem seus clientes com as informações do seu negócio e chamam a sua equipe quando o assunto pede uma pessoa.',
-  destaques: ['Responde a qualquer hora', 'Informações numa planilha sua', 'Passa para a sua equipe'],
+  destaques: ['Responde a qualquer hora', 'A partir de R$ 59 por mês', 'Passa para a sua equipe'],
 
   paraQuem: {
     titulo: 'Para quem responde as mesmas perguntas o dia todo.',
@@ -336,7 +354,7 @@ export const ATENDENTE: ConteudoServico = {
     ],
     texto: [
       'O atendente responde só com o que está nas informações do seu negócio: não inventa preço nem promete o que você não oferece. Quando não sabe, ou quando o cliente quer agendar, fechar ou falar com alguém, ele avisa a sua equipe.',
-      'A equipe responde pelo WhatsApp, e o cliente recebe pelo número da empresa. Quando a conversa termina, ela volta para o atendente virtual.',
+      'A equipe responde por um painel de atendimento, no navegador ou no celular, e o cliente recebe pelo número da empresa. Quando a conversa termina, ela volta para o atendente virtual.',
     ],
   },
 
@@ -351,8 +369,8 @@ export const ATENDENTE: ConteudoServico = {
           'Você conta como é o atendimento hoje: o que os clientes mais perguntam e quando precisa de uma pessoa.',
       },
       {
-        nome: 'Escopo e proposta',
-        texto: 'O que o atendente responde, quando chama a equipe, o prazo e o valor fechado, por escrito.',
+        nome: 'Plano e proposta',
+        texto: 'O que o atendente responde, quando chama a equipe e quais extras você precisa. O plano e o valor, por escrito.',
       },
       {
         nome: 'Atendente no ar',
@@ -393,25 +411,44 @@ export const ATENDENTE: ConteudoServico = {
 
   preco: {
     titulo: 'Quanto custa um atendente de WhatsApp?',
+    destaque: 'Implantação de R$ 147 e a partir de R$ 59 por mês.',
     texto:
-      'Depende do que o atendente precisa fazer. O valor é fechado por escopo: depois da conversa gratuita, você recebe por escrito o que vai ser feito, o prazo e o preço, e o pagamento é dividido pelos marcos de entrega.',
-    fatores: [
-      'Quantas informações e perguntas o atendente precisa cobrir.',
-      'API oficial do WhatsApp ou conexão com o WhatsApp do seu número.',
-      'Quando e como a equipe é chamada.',
-      'Mais de uma pessoa da equipe atendendo.',
-      'Ligação com agenda, sistema ou planilha que você já usa.',
-      'Áudio, imagem e outros formatos além de texto.',
-    ],
+      'O atendente fica hospedado pela Kovex: você não instala nada e paga uma mensalidade pelo que liga. Os valores são fixos; o que muda é quais extras o seu negócio precisa.',
+    fatores: [],
+    tabela: {
+      rotulo: 'Os valores',
+      linhas: [
+        {
+          nome: 'Implantação',
+          valor: 'R$ 147, uma vez',
+          inclui: 'A planilha com as suas informações, o número conectado, a sua equipe no painel e o teste com você antes de abrir para os clientes.',
+        },
+        {
+          nome: 'Plano base',
+          valor: 'R$ 59 por mês',
+          inclui:
+            'Responde com a sua planilha, passa para a equipe e devolve a conversa ao terminar, painel de atendimento e 1 número. Inteligência artificial incluída até 2.000 respostas por mês.',
+        },
+        { nome: 'Áudio e foto', valor: '+ R$ 19 por mês', inclui: 'O atendente entende o áudio e a foto que o cliente manda.' },
+        { nome: 'Agendamento', valor: '+ R$ 39 por mês', inclui: 'Marca horários direto no seu Google Agenda, pelas regras da sua planilha.' },
+        { nome: 'Leads e CRM', valor: '+ R$ 29 por mês', inclui: 'Registra nome, interesse e contato de quem chega e envia ao seu CRM.' },
+        { nome: 'Número extra', valor: '+ R$ 49 por mês', inclui: 'Mais um número de WhatsApp na mesma conta, com a própria planilha.' },
+      ],
+      notas: [
+        'Acima de 2.000 respostas no mês, R$ 15 a cada 1.000 a mais, na fatura seguinte. Avisamos quando chegar a 80%, e o atendente não para.',
+        'Plano mensal, sem fidelidade, com 30 dias de aviso. Ao sair, você leva a planilha e a exportação das conversas e dos leads.',
+        'Pela API oficial, a Meta cobra à parte as mensagens acima da cota gratuita do mês, direto a você. Na conexão com o WhatsApp do seu número, não há essa cobrança.',
+      ],
+    },
     fecho:
-      'Na conversa, a gente separa o que precisa estar no ar agora do que pode esperar. Um atendente que responde bem as perguntas mais comuns já tira boa parte do trabalho.',
+      'Na conversa gratuita, a gente vê quais extras fazem sentido para o seu caso. Um atendente só com o plano base, respondendo bem as perguntas mais comuns, já tira boa parte do trabalho.',
   },
 
   condicoes: [
     {
-      nome: 'Pelo canal oficial.',
+      nome: 'Dois caminhos para o número.',
       texto:
-        'Pela API oficial, o atendente usa o canal que a Meta oferece para empresas, sem o risco de bloqueio por automação. A Meta cobra à parte as mensagens acima de uma cota gratuita por mês, pagas direto a ela.',
+        'A API oficial do WhatsApp, no cadastro da sua empresa na Meta, sem risco de bloqueio por automação; ou a conexão com o WhatsApp do seu número, mais simples de começar, com um termo de ciência sobre o risco de bloqueio.',
     },
     {
       nome: 'As informações são suas.',
@@ -419,9 +456,9 @@ export const ATENDENTE: ConteudoServico = {
         'Preços, horários e respostas ficam numa planilha na sua conta. Você muda quando quiser, sem depender da gente.',
     },
     {
-      nome: 'O código é seu.',
+      nome: 'Sem fidelidade.',
       texto:
-        'Repositório, domínio e contas ficam no seu nome desde o primeiro dia. Se um dia quiser seguir com outra pessoa, leva tudo.',
+        'O plano é mensal e pode ser cancelado com 30 dias de aviso. Ao sair, você leva a planilha e a exportação das conversas e dos leads.',
     },
   ],
 
@@ -441,17 +478,22 @@ export const ATENDENTE: ConteudoServico = {
       {
         pergunta: 'Como a minha equipe assume a conversa?',
         resposta:
-          'A equipe recebe um aviso no WhatsApp com o nome do cliente e a última mensagem, e responde por ali. O cliente recebe pelo número da empresa. Quando termina, um toque devolve a conversa ao atendente virtual.',
+          'O atendente avisa a equipe, com o nome do cliente e o que ele escreveu, e a conversa aparece no painel de atendimento, que abre no navegador ou no celular. A equipe responde por ali, e o cliente recebe pelo número da empresa. Quando termina, um toque devolve a conversa ao atendente virtual.',
       },
       {
         pergunta: 'Preciso de algum programa novo?',
         resposta:
-          'Não. As informações ficam numa planilha que você já sabe usar, e a equipe atende pelo próprio WhatsApp.',
+          'Só o painel de atendimento, que abre no navegador ou no celular, para a equipe responder quando o atendente chamar. As informações ficam numa planilha que você já sabe usar.',
+      },
+      {
+        pergunta: 'O que acontece se passar de 2.000 respostas no mês?',
+        resposta:
+          'O atendente continua respondendo. Você recebe um aviso quando chega a 80% do limite, e o que passar é cobrado na fatura seguinte, a R$ 15 por 1.000 respostas. Para a maioria dos pequenos negócios, as 2.000 incluídas sobram.',
       },
       {
         pergunta: 'E depois que o atendente estiver no ar?',
         resposta:
-          'Correções de defeitos estão incluídas por 30 dias. Novas respostas você mesmo inclui na planilha; mudanças no jeito de atender são orçadas no mesmo modelo.',
+          'A mensalidade cobre a hospedagem, a inteligência artificial e as correções. Novas respostas você mesmo inclui na planilha; novos extras entram no plano quando você quiser, e mudanças no jeito de atender são combinadas antes.',
       },
       {
         pergunta: 'Minha ideia fica protegida?',
