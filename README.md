@@ -183,5 +183,4 @@ Hoje existem `/atendente-de-whatsapp-com-ia`, `/criacao-de-sites` e `/desenvolvi
   não pelo WhatsApp pessoal; entrou "Sem fidelidade" e a pergunta sobre passar de 2.000 respostas. Em 14/11,
   landing page e site viraram um serviço só, "páginas web", a partir de R$ 200 (home, abertura, rodapé, title e
   description, e a página `/criacao-de-sites`, que manteve o endereço); o WhatsApp do site passou para o número
-  oficial. **Ainda não publicado**; a imagem de compartilhamento (`opengraph-image.png`) e o texto alternativo
-  dela ainda dizem "sites e apps".
+  oficial. Publicado em 14/11 (22:06) e conferido no ar em 15/11 (número, "páginas web", R$ 200, tabela de preços iguais ao plano). Em 15/11 a imagem de compartilhamento e o texto alternativo (`opengraph-image.png`, `twitter-image.png` e os `.alt.txt`) passaram a dizer "páginas web e apps"; **falta subir**.
