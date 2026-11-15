@@ -80,7 +80,7 @@ export function Abertura() {
           <h1>
             <span className="rotulo flex items-baseline gap-3 text-azul-claro">
               <span className="chevron" aria-hidden="true" />
-              Atendente de WhatsApp com IA, sites e apps sob medida
+              Atendente de WhatsApp com IA, páginas web e apps sob medida
             </span>
             <span className="sr-only">. </span>
             <span data-entrada-linhas className="mt-6 block max-w-[15ch] font-display text-gigante font-bold">
@@ -88,7 +88,7 @@ export function Abertura() {
             </span>
           </h1>
           <p className="mt-8 max-w-texto text-abertura text-apoio">
-            A Kovex cria atendentes de WhatsApp com IA, sites, automações e apps para empreendedores que têm uma
+            A Kovex cria atendentes de WhatsApp com IA, páginas web, automações e apps para empreendedores que têm uma
             ideia e querem vê-la funcionando. Começamos pelo essencial e evoluímos com você.
           </p>
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-6">

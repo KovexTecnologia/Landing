@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     'Kovex Tecnologia',
     'desenvolvimento de software sob medida',
     'atendente de WhatsApp com IA',
+    'criação de páginas web',
     'criação de sites e landing pages',
     'desenvolvimento de aplicativos',
     'MVP',

@@ -30,19 +30,25 @@ pnpm typecheck
 | Capturas do MakerDesk (painel, app e site) | `public/products/makerdesk-relatorios.png`, `makerdesk-app.png` e `makerdesk-landing.png` |
 
 Foco, desde 2026-11-10: **serviços que ficam prontos rápido.** Os serviços, nesta ordem, são atendente
-de WhatsApp com IA, sites e landing pages, automação e IA (ainda sem página) e apps para celular. Sistemas
-web saiu do site: `/desenvolvimento-de-sistemas` redireciona para a home com 308 (`next.config.ts`),
+de WhatsApp com IA, **páginas web** (landing pages e sites, juntos desde 2026-11-14), automação e IA (ainda sem
+página) e apps para celular. A página de páginas web segue em `/criacao-de-sites` (já indexada); o nome do
+serviço, o título e os textos passaram a dizer "páginas web", e "landing pages" e "sites" continuam no corpo do
+texto e nas palavras-chave. Sistemas web saiu do site: `/desenvolvimento-de-sistemas` redireciona para a home com 308 (`next.config.ts`),
 porque já estava indexada.
 
 Regra da copy, herdada da versão anterior: **nada de número, cliente ou prazo inventado.** Os únicos
 números do site são compromissos confirmados pela Kovex: primeira versão de um app em 4 a 6 semanas, 30
 dias de correções e resposta em até 24 horas; landing page em até 1 semana, site da empresa em até 2 e
-landing page de uma página, com o texto do cliente, a partir de R$ 200; e, desde 13/11/2026, a tabela do
-atendente de WhatsApp (implantação R$ 147; base R$ 59/mês com IA até 2.000 respostas; áudio e foto +R$ 19;
-agendamento +R$ 39; leads e CRM +R$ 29; número extra +R$ 49; excedente R$ 15 por 1.000; mensal sem
-fidelidade), que vem do "Plano de venda" do `WhatsappBot/README.md`: mudou lá, muda aqui. A página do
-atendente continua sem prazo de implantação, e a conversa dela é da demonstração da Clínica Lume
-(`WhatsapBotOficial`), com dados fictícios. A nota 100 do
+páginas web (a partir de uma página, com o texto do cliente) a partir de R$ 200, com o valor final combinado
+na conversa; e, desde 13/11/2026, a tabela do atendente de WhatsApp (implantação R$ 147; base R$ 59/mês com
+IA até 2.000 respostas; áudio e foto +R$ 19; agendamento +R$ 39; leads e CRM +R$ 29; número extra +R$ 49;
+excedente R$ 15 por 1.000; mensal sem fidelidade), que vem do "Plano de venda" do `WhatsappBot/README.md`:
+mudou lá, muda aqui. App e automação seguem sem número ("preço da automação: a pensar", decisão de
+2026-11-14). A página do atendente continua sem prazo de implantação, e a conversa dela é da demonstração da
+Clínica Lume (hoje o prompt `clinica` da plataforma `WhatsappBot`; veio do repositório antigo
+`WhatsapBotOficial`, já descontinuado), com dados fictícios. O WhatsApp do site é o **número oficial da
+Kovex, (79) 8122-2315** (`WHATSAPP_NUMBER` em `lib/site.ts`, desde 2026-11-14): o (79) 98134-8819 ficou para
+o suporte do MakerDesk. A nota 100 do
 PageSpeed citada na página de sites é uma medição real, com data. Os números que aparecem dentro das
 capturas do MakerDesk são de uma oficina de demonstração, não afirmação da Kovex.
 
@@ -174,4 +180,8 @@ Hoje existem `/atendente-de-whatsapp-com-ia`, `/criacao-de-sites` e `/desenvolvi
   pedida no Search Console. Em 13/11, a página do atendente ganhou a tabela de preços do plano de venda
   (`preco.tabela`), o destaque "A partir de R$ 59 por mês" na abertura e os textos ajustados ao modelo
   hospedado: saiu "O código é seu" (o código não é entregue) e a equipe passou a atender por um painel,
-  não pelo WhatsApp pessoal; entrou "Sem fidelidade" e a pergunta sobre passar de 2.000 respostas.
+  não pelo WhatsApp pessoal; entrou "Sem fidelidade" e a pergunta sobre passar de 2.000 respostas. Em 14/11,
+  landing page e site viraram um serviço só, "páginas web", a partir de R$ 200 (home, abertura, rodapé, title e
+  description, e a página `/criacao-de-sites`, que manteve o endereço); o WhatsApp do site passou para o número
+  oficial. **Ainda não publicado**; a imagem de compartilhamento (`opengraph-image.png`) e o texto alternativo
+  dela ainda dizem "sites e apps".

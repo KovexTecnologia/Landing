@@ -4,7 +4,7 @@
  */
 
 /** Os três fatos da faixa embaixo da abertura (aprovados em 2026-10-21). */
-export const DESTAQUES = ['Landing page em até 1 semana', 'Valor fechado', 'Código no seu nome'] as const
+export const DESTAQUES = ['Páginas web a partir de R$ 200', 'Valor fechado', 'Código no seu nome'] as const
 
 /**
  * Exemplos de ideias na seção "Para quem". São tipos de projeto, não clientes:
@@ -32,8 +32,9 @@ export const SERVICOS = [
     pagina: '/atendente-de-whatsapp-com-ia',
   },
   {
-    nome: 'Sites e landing pages',
-    texto: 'A página que apresenta sua ideia, explica a oferta e traz os primeiros contatos.',
+    nome: 'Páginas web',
+    texto:
+      'Landing pages e sites que apresentam sua ideia, explicam a oferta e trazem os primeiros contatos. A partir de R$ 200.',
     pagina: '/criacao-de-sites',
   },
   {
@@ -97,7 +98,7 @@ export const PERGUNTAS = [
   {
     pergunta: 'Quanto custa?',
     resposta:
-      'O valor é fechado por escopo. Depois da conversa gratuita, você recebe uma proposta com o que entra na primeira versão, o prazo e o preço. O pagamento é dividido por marcos de entrega.',
+      'Páginas web (landing pages e sites) começam em R$ 200. Nos demais serviços, o valor é fechado por escopo. Depois da conversa gratuita, você recebe uma proposta com o que entra na primeira versão, o prazo e o preço. O pagamento é dividido por marcos de entrega.',
   },
   {
     pergunta: 'Preciso entender de tecnologia?',

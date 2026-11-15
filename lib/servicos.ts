@@ -175,24 +175,26 @@ export const APLICATIVOS: ConteudoServico = {
 }
 
 /**
- * Decisões de 2026-10-22: termo "sites e landing pages"; exemplos de landing de lançamento, site da
- * empresa e página de venda ("site que aparece no Google" ficou de fora: nada de prometer posição);
- * landing do MakerDesk como prova; landing page em até 1 semana e site da empresa em até 2; landing
- * page de uma página, com o texto do cliente, a partir de R$ 200, e o resto sem número.
+ * Decisões de 2026-10-22: exemplos de landing de lançamento, site da empresa e página de venda
+ * ("site que aparece no Google" ficou de fora: nada de prometer posição); landing do MakerDesk como
+ * prova; landing page em até 1 semana e site da empresa em até 2.
+ * Decisão de 2026-11-14 (Paulo): landing page e site viram um serviço só, "páginas web", a partir de
+ * R$ 200; o valor final é combinado na conversa, se a pessoa quiser seguir. O endereço
+ * `/criacao-de-sites` continua o mesmo (já indexado), e os termos "sites" e "landing pages" seguem no texto.
  */
 export const SITES: ConteudoServico = {
   caminho: '/criacao-de-sites',
-  title: 'Criação de sites e landing pages sob medida · Kovex',
+  title: 'Criação de páginas web: landing pages e sites · Kovex',
   description:
-    'Criação de sites e landing pages sob medida. Landing page a partir de R$ 200, no ar em até 1 semana; site da empresa em até 2 semanas.',
+    'Criação de páginas web sob medida: landing pages e sites da empresa. A partir de R$ 200, landing page em até 1 semana e site em até 2 semanas.',
   whatsapp:
-    'Olá, Kovex! Vim pela página de sites. Preciso de um site ou uma landing page e quero entender por onde começar.',
-  trilha: 'Sites e landing pages',
-  rotulo: 'Criação de sites e landing pages sob medida',
+    'Olá, Kovex! Vim pela página de páginas web. Preciso de uma landing page ou de um site e quero entender por onde começar.',
+  trilha: 'Páginas web',
+  rotulo: 'Criação de páginas web: landing pages e sites',
   frase: 'A página que apresenta o seu negócio e traz contatos.',
   abertura:
-    'A Kovex cria sites e landing pages para quem precisa se apresentar bem e começar a receber contatos. Landing page no ar em até 1 semana e site da empresa em até 2.',
-  destaques: ['Landing page em até 1 semana', 'A partir de R$ 200', 'Domínio e código no seu nome'],
+    'A Kovex cria páginas web, de landing pages a sites da empresa, para quem precisa se apresentar bem e começar a receber contatos. A partir de R$ 200, com landing page no ar em até 1 semana e site da empresa em até 2.',
+  destaques: ['A partir de R$ 200', 'No ar em 1 a 2 semanas', 'Domínio e código no seu nome'],
 
   paraQuem: {
     titulo: 'A página certa para o que você precisa agora.',
@@ -208,7 +210,7 @@ export const SITES: ConteudoServico = {
   },
 
   etapas: {
-    titulo: 'Como a gente cria o seu site.',
+    titulo: 'Como a gente cria a sua página.',
     texto: 'O mesmo caminho de todo projeto da Kovex, num prazo mais curto: primeiro o essencial, depois o que vier.',
     nota: 'Os prazos contam da proposta aprovada, com os textos e as imagens em mãos. Se precisar que a gente escreva os textos, isso entra na proposta e no prazo.',
     lista: [
@@ -220,17 +222,17 @@ export const SITES: ConteudoServico = {
       {
         nome: 'Escopo e proposta',
         texto:
-          'O que entra no site, o prazo e o valor fechado, por escrito. Sem surpresa no meio do caminho.',
+          'O que entra na página, o prazo e o valor, por escrito. Sem surpresa no meio do caminho.',
       },
       {
-        nome: 'Site no ar',
+        nome: 'Página no ar',
         texto:
           'Landing page em até 1 semana e site da empresa em até 2, para a maioria dos projetos. Você revisa cada página antes de publicar.',
       },
       {
         nome: 'Evolução',
         texto:
-          'Com o site no ar, fica claro o que ajustar ou acrescentar. Novas páginas e mudanças são orçadas do mesmo jeito.',
+          'Com a página no ar, fica claro o que ajustar ou acrescentar. Novas páginas e mudanças são orçadas do mesmo jeito.',
       },
     ],
   },
@@ -246,12 +248,12 @@ export const SITES: ConteudoServico = {
   },
 
   preco: {
-    titulo: 'Quanto custa um site?',
-    destaque: 'Landing page a partir de R$ 200.',
+    titulo: 'Quanto custa uma página web?',
+    destaque: 'Páginas web a partir de R$ 200.',
     texto:
-      'Esse é o valor de uma landing page de uma página, com o seu texto. Site da empresa e páginas com mais recursos têm valor fechado por escopo: depois da conversa gratuita, você recebe por escrito o que vai ser feito, o prazo e o preço.',
+      'Esse é o ponto de partida: uma página só, com o seu texto. O valor final depende do que a sua página precisa ter, de uma landing page a um site da empresa, e é combinado com você na conversa gratuita: o que vai ser feito, o prazo e o preço, por escrito.',
     fatores: [
-      'Quantas páginas o site tem.',
+      'Quantas páginas o projeto tem.',
       'Textos e imagens: prontos, ou escritos e produzidos por nós.',
       'Formulários e ligação com WhatsApp, e-mail ou outro sistema.',
       'Uma área de notícias ou artigos.',
@@ -271,7 +273,7 @@ export const SITES: ConteudoServico = {
     {
       nome: 'Domínio e hospedagem no seu nome.',
       texto:
-        'O endereço do site é registrado no seu nome, e a hospedagem fica numa conta sua. Quando há custo, ele é pago direto a quem presta o serviço.',
+        'O endereço da página é registrado no seu nome, e a hospedagem fica numa conta sua. Quando há custo, ele é pago direto a quem presta o serviço.',
     },
     {
       nome: 'O código é seu.',
@@ -281,12 +283,12 @@ export const SITES: ConteudoServico = {
   ],
 
   perguntas: {
-    titulo: 'Perguntas sobre sites.',
+    titulo: 'Perguntas sobre páginas web.',
     itens: [
       {
-        pergunta: 'O que entra na landing page de R$ 200?',
+        pergunta: 'O que entra nas páginas web a partir de R$ 200?',
         resposta:
-          'Uma página só, com o seu texto e as suas imagens, e o botão do WhatsApp. Textos escritos por nós, mais páginas ou recursos extras entram na proposta, com valor fechado.',
+          'Uma página só, com o seu texto e as suas imagens, e o botão do WhatsApp. Textos escritos por nós, mais páginas ou recursos extras mudam o valor, que a gente combina com você na conversa.',
       },
       {
         pergunta: 'Landing page ou site completo: qual eu preciso?',
@@ -296,7 +298,7 @@ export const SITES: ConteudoServico = {
       {
         pergunta: 'Vocês escrevem os textos?',
         resposta:
-          'Podemos escrever, e isso entra na proposta. Na landing page a partir de R$ 200, o texto é seu.',
+          'Podemos escrever, e isso entra na proposta. Na página a partir de R$ 200, o texto é seu.',
       },
       {
         pergunta: 'O site aparece no Google?',

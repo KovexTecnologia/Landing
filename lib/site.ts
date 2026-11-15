@@ -4,9 +4,9 @@ export const SITE_NAME = 'Kovex Tecnologia'
  * Title e description com as palavras que as pessoas buscam (decisão de 2026-10-22).
  * Até ~60 e ~155 caracteres, para o Google não cortar.
  */
-export const SITE_TITLE = 'Atendente de WhatsApp com IA, sites e apps · Kovex'
+export const SITE_TITLE = 'Atendente de WhatsApp com IA, páginas web e apps · Kovex'
 export const SITE_DESCRIPTION =
-  'Atendente de WhatsApp com IA, sites, landing pages, automações e apps sob medida. Landing page em até 1 semana, valor fechado e código no seu nome.'
+  'Atendente de WhatsApp com IA, páginas web (landing pages e sites), automações e apps sob medida. Páginas web a partir de R$ 200, valor fechado e código no seu nome.'
 
 /**
  * Dados formais: aparecem no rodapé, na privacidade e no JSON-LD. Endereço e data
@@ -30,14 +30,19 @@ export const COMPANY_ADDRESS = {
 export const CONTACT_EMAIL = 'contato@kovex.com.br'
 
 /**
- * WhatsApp: o mesmo número do suporte do MakerDesk. A mensagem pronta diz que a
- * pessoa veio pelo site da Kovex, para não se misturar com o suporte.
+ * WhatsApp oficial da Kovex (API oficial da Meta, atendente com IA). Desde 2026-11-14 não é mais o
+ * (79) 98134-8819, que fica para o MakerDesk. A mensagem pronta diz que a pessoa veio pelo site.
  *
- * `WHATSAPP_NUMBER` é só dígitos com DDI, o formato que o `wa.me` exige; os outros
- * formatos derivam dele para não ficarem defasados.
+ * `WHATSAPP_NUMBER` é só dígitos com DDI, o formato que o `wa.me` exige; os outros formatos derivam
+ * dele para não ficarem defasados. Aceita 12 dígitos (DDI + DDD + 8, como o número oficial, que o
+ * WhatsApp Business mostra sem o nono dígito) ou 13 (com 9 dígitos depois do DDD).
  */
-export const WHATSAPP_NUMBER = '5579981348819'
-export const WHATSAPP_DISPLAY = `(${WHATSAPP_NUMBER.slice(2, 4)}) ${WHATSAPP_NUMBER.slice(4, 9)}-${WHATSAPP_NUMBER.slice(9)}`
+export const WHATSAPP_NUMBER = '557981222315'
+const DDI = WHATSAPP_NUMBER.slice(0, 2)
+const DDD = WHATSAPP_NUMBER.slice(2, 4)
+const LOCAL = WHATSAPP_NUMBER.slice(4)
+const LOCAL_COM_HIFEN = `${LOCAL.slice(0, -4)}-${LOCAL.slice(-4)}`
+export const WHATSAPP_DISPLAY = `(${DDD}) ${LOCAL_COM_HIFEN}`
 export const WHATSAPP_MESSAGE =
   'Olá, Kovex! Vim pelo site. Tenho uma ideia e quero entender por onde começar.'
 /** Cada página de serviço tem a própria mensagem, que diz de onde a pessoa veio (decisão de 2026-10-22). */
@@ -45,8 +50,8 @@ export const whatsappUrl = (mensagem: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`
 export const WHATSAPP_URL = whatsappUrl(WHATSAPP_MESSAGE)
 
-/** Formato E.164 para o JSON-LD. Assume celular brasileiro (13 dígitos). */
-export const PHONE_E164 = `+${WHATSAPP_NUMBER.slice(0, 2)}-${WHATSAPP_NUMBER.slice(2, 4)}-${WHATSAPP_NUMBER.slice(4, 9)}-${WHATSAPP_NUMBER.slice(9)}`
+/** Formato E.164 com hifens para o JSON-LD (+55-79-8122-2315). */
+export const PHONE_E164 = `+${DDI}-${DDD}-${LOCAL_COM_HIFEN}`
 
 export const MAKERDESK_URL = 'https://www.makerdesk.com.br'
 export const MAKERDESK_TAGLINE = 'Gestão para negócios de impressão 3D'
