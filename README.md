@@ -28,6 +28,7 @@ pnpm typecheck
 | Política de privacidade | `app/privacidade/page.tsx` |
 | Imagem de compartilhamento | `docs/og/og.html` (gera `app/opengraph-image.png` e `app/twitter-image.png`; em 2026-11-10 saiu do Chrome sem janela: `chrome --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=5000 --screenshot=og.png file:///.../docs/og/og.html`) |
 | Capturas do MakerDesk (painel, app e site) | `public/products/makerdesk-relatorios.png`, `makerdesk-app.png` e `makerdesk-landing.png` |
+| Anúncio do atendente no Instagram (Reels com narração, capa, carrossel, story) | `docs/reels/` (roteiro, regras e como gerar de novo em `docs/reels/roteiro-reels.md`; arquivos prontos em `docs/reels/saida/`). O anúncio não mostra preço, ao contrário da página |
 
 Foco, desde 2026-11-10: **serviços que ficam prontos rápido.** Os serviços, nesta ordem, são atendente
 de WhatsApp com IA, **páginas web** (landing pages e sites, juntos desde 2026-11-14), automação e IA (ainda sem
